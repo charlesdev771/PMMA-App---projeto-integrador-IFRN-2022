@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import { Text, View} from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
@@ -9,12 +9,17 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
     <View style={styles.container}>
       <Text style={styles.title}>Bem vindo!</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+
+      <View>
+        <Text style={styles.titleMain}>Este é o aplicativo oficial do projeto P.M.M.A!</Text>
+      </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create
+({
+
   container: {
     flex: 1,
     alignItems: 'center',
@@ -22,12 +27,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFD700',
   },
   title: {
-    fontSize: 20,
+    fontSize: 40,
     fontWeight: 'bold',
   },
   separator: {
     marginVertical: 30,
-    height: 1,
-    width: '80%',
+    height: 2,
+    width: '100%',
   },
+  titleMain:
+  {
+    fontSize: 17,
+  }
+
 });

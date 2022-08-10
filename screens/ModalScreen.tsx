@@ -1,18 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
+import {StyleSheet } from 'react-native';
+import { Entypo } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons';
 import { Text, View } from '../components/Themed';
 
 export default function ModalScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
+      <Text style={styles.title}>Redes Sociais</Text>
 
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
+      <View style={styles.social}>
+        <Entypo name="facebook" size={44} color="black" style={{padding: 10}}/>
+        <AntDesign name="twitter" size={44} color="black" style={{padding: 5}}/>
+        <AntDesign name="instagram" size={44} color="black" style={{padding: 5}}/>
+        <Entypo name="book" size={44} color="black" style={{padding: 5}} />
+      </View>
     </View>
   );
 }
@@ -22,14 +23,16 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#FFD700',
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  social: {
+    width: '50%',
+    marginTop: 20,
+    alignItems: 'center',
+    
   },
 });

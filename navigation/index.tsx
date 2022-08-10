@@ -7,6 +7,8 @@
   import { ColorSchemeName, Pressable } from 'react-native';
   import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
   import LinkingConfiguration from './LinkingConfiguration';
+  import { AntDesign } from '@expo/vector-icons';
+  import { Ionicons } from '@expo/vector-icons';
 //;
 
 //Files
@@ -25,6 +27,7 @@
   import TabSixScreen from '../screens/TabSixScreen';
 //;
 
+
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) 
 {
 
@@ -40,10 +43,14 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   
 }
 
+
 const Stack = createNativeStackNavigator<RootStackParamList>(); //Create Navigation
 
+
 function RootNavigator() 
+
 {
+
   return (
 
     <Stack.Navigator>
@@ -55,15 +62,14 @@ function RootNavigator()
     </Stack.Navigator>
     
   );
+
 }
 
-/**
- * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
+
 function BottomTabNavigator() 
+
 {
   
   const colorScheme = useColorScheme();
@@ -76,84 +82,74 @@ function BottomTabNavigator()
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
 
+       
+        <BottomTab.Screen //Button home
+          name="TabOne"
+          component={TabOneScreen}
+          options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
+            title: 'P.M.M.A',
+            tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+            headerRight: () => (
+              <Pressable
+                onPress={() => navigation.navigate('Modal')}
+                style={({ pressed }) => ({
+                  opacity: pressed ? 0.4 : 1,
+                })}>
+                <FontAwesome
+                  name="feed"
+                  size={35}
+                  color={Colors[colorScheme].text}
+                  style={{ marginRight: 15 }}
+                />
+              </Pressable>
+            ),
+          })}
+        />
+
+        <BottomTab.Screen //Button about
+          name="TabTwo"
+          component={TabTwoScreen}
+          options={{
+            title: 'Sobre',
+            tabBarIcon: ({ color }) => <TabBarIcon name="info" color={color} />,
+          }}
+        />
 
       <BottomTab.Screen
-        name="s"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'P.M.M.A',
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
-        })}
-      />
-
-      
-      <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="feed" color={color} />,
-        }}
-      />
-
-      
-      
-      
-      
-
-<BottomTab.Screen
         name="TabThree"
         component={TabThreeScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        title: 'Prevenção',
+        tabBarIcon: ({ color }) => <AntDesign name="heart" size={24} color="black" />,
         }}
-      />
+            />
 
-<BottomTab.Screen
+      <BottomTab.Screen
         name="TabFour"
         component={TabFourScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        title: 'Causas',
+        tabBarIcon: ({ color }) => <AntDesign name="meh" size={24} color="black" />,
         }}
-      />
+        />
 
-<BottomTab.Screen
+      <BottomTab.Screen
         name="TabFive"
         component={TabFiveScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        title: 'Tab Two',
+        tabBarIcon: ({ color }) => <Ionicons name="people-sharp" size={24} color="black" />,
         }}
-      />
+        />
 
-<BottomTab.Screen
+      <BottomTab.Screen
         name="TabSix"
         component={TabSixScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        title: 'Tratamento',
+        tabBarIcon: ({ color }) => <AntDesign name="smile-circle" size={24} color="black" />,
         }}
-      />
-
-
-
-
+        />
 
     </BottomTab.Navigator>
 
