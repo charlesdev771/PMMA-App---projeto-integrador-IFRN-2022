@@ -9,10 +9,10 @@ export default function ModalScreen() {
       <Text style={styles.title}>Redes Sociais</Text>
 
       <View style={styles.social}>
-        <Entypo name="facebook" size={44} color="black" style={{padding: 10}}/>
-        <AntDesign name="twitter" size={44} color="black" style={{padding: 5}}/>
-        <AntDesign name="instagram" size={44} color="black" style={{padding: 5}}/>
-        <Entypo name="book" size={44} color="black" style={{padding: 5}} />
+        <Entypo name="facebook" size={44} color="white" style={{padding: 10}}/>
+        <AntDesign name="twitter" size={44} color="white" style={{padding: 5}}/>
+        <AntDesign name="instagram" size={44} color="white" style={{padding: 5}}/>
+        <Entypo name="book" size={44} color="white" style={{padding: 5}} />
       </View>
     </View>
   );

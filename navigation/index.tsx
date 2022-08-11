@@ -111,7 +111,7 @@ function BottomTabNavigator()
           component={TabTwoScreen}
           options={{
             title: 'Sobre',
-            tabBarIcon: ({ color }) => <TabBarIcon name="info" color={color} />,
+            tabBarIcon: ({ color }) => <TabBarIcon name="info" size={24} color={"white"}/>,
           }}
         />
 
@@ -120,7 +120,7 @@ function BottomTabNavigator()
         component={TabThreeScreen}
         options={{
         title: 'Prevenção',
-        tabBarIcon: ({ color }) => <AntDesign name="heart" size={24} color="black" />,
+        tabBarIcon: ({ color }) => <AntDesign name="heart" size={24} color="white" />,
         }}
             />
 
@@ -129,7 +129,7 @@ function BottomTabNavigator()
         component={TabFourScreen}
         options={{
         title: 'Causas',
-        tabBarIcon: ({ color }) => <AntDesign name="meh" size={24} color="black" />,
+        tabBarIcon: ({ color }) => <AntDesign name="meh" size={24} color="white" />,
         }}
         />
 
@@ -137,8 +137,8 @@ function BottomTabNavigator()
         name="TabFive"
         component={TabFiveScreen}
         options={{
-        title: 'Tab Two',
-        tabBarIcon: ({ color }) => <Ionicons name="people-sharp" size={24} color="black" />,
+        title: 'Tipos',
+        tabBarIcon: ({ color }) => <Ionicons name="people-sharp" size={24} color="white" />,
         }}
         />
 
@@ -147,7 +147,7 @@ function BottomTabNavigator()
         component={TabSixScreen}
         options={{
         title: 'Tratamento',
-        tabBarIcon: ({ color }) => <AntDesign name="smile-circle" size={24} color="black" />,
+        tabBarIcon: ({ color }) => <AntDesign name="smile-circle" size={24} color="white" />,
         }}
         />
 

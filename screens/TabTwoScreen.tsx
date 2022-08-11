@@ -61,7 +61,7 @@ export default function TabTwoScreen()
           style={styles.imgMember}
           source={require('../assets/images/member.jpg')}
         />
-        <Text style={styles.textProject}>
+        <Text style={styles.textMember}>
           Curabitur quis suscipit erat. Nullam a ipsum non elit vestibulum 
           vestibulum sit amet in erat. Aliquam accumsan feugiat efficitur. 
           Curabitur quis suscipit erat. Nullam a ipsum non elit vestibulum 
@@ -71,7 +71,7 @@ export default function TabTwoScreen()
           style={styles.imgMember}
           source={require('../assets/images/member.jpg')}
         />
-        <Text style={styles.textProject}>
+        <Text style={styles.textMember}>
           Curabitur quis suscipit erat. Nullam a ipsum non elit vestibulum 
           vestibulum sit amet in erat. Aliquam accumsan feugiat efficitur. 
           Curabitur quis suscipit erat. Nullam a ipsum non elit vestibulum 
@@ -81,7 +81,7 @@ export default function TabTwoScreen()
           style={styles.imgMember}
           source={require('../assets/images/member.jpg')}
         />
-        <Text style={styles.textProject}>
+        <Text style={styles.textMember}>
           Curabitur quis suscipit erat. Nullam a ipsum non elit vestibulum 
           vestibulum sit amet in erat. Aliquam accumsan feugiat efficitur. 
           Curabitur quis suscipit erat. Nullam a ipsum non elit vestibulum 
@@ -137,6 +137,7 @@ const styles = StyleSheet.create
     width: '75%',
     textAlign: 'justify',
     paddingTop: 15, 
+    
   },
   titleProject:
   {
@@ -163,5 +164,14 @@ const styles = StyleSheet.create
   {
     width: '65%',
   },
+  textMember:
+  {
+    fontSize: 20,
+    width: '75%',
+    textAlign: 'justify',
+    paddingTop: 15, 
+    paddingBottom: 20,
+    color: 'black',
+  }
   
 });
